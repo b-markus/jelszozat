@@ -8,8 +8,8 @@ export const NOT_ENOUGH_LETTERS_MESSAGE = 'Nincs elég betű'
 export const WORD_NOT_FOUND_MESSAGE = 'Nem találtunk ilyen szót'
 export const HARD_MODE_ALERT_MESSAGE =
   'A nehezített módot csak a játék elején lehet bekapcsolni'
-export const CORRECT_WORD_MESSAGE = (solution: Word) =>
-  `Vesztettél, a megoldás ez volt: ${solution.join('')}`
+export const CORRECT_WORD_MESSAGE = (solution: Word) => `Töltsd újra az oldalt, hogy újra próbálkozhass!`
+//  `Vesztettél, a megoldás ez volt: ${solution.join('')}`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `A(z) ${guess} betűnek a(z) ${position}. helyen kell lennie.`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>

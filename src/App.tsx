@@ -179,9 +179,9 @@ function App() {
     }
   }, [isDarkMode])
 
-  useEffect(() => {
-    saveGameStateToLocalStorage({ guesses, solution })
-  }, [guesses])
+  //  useEffect(() => {
+  //    saveGameStateToLocalStorage({ guesses, solution })
+  //  }, [guesses])
 
   useEffect(() => {
     if (isGameWon) {
@@ -197,7 +197,7 @@ function App() {
     }
     if (isGameLost) {
       setTimeout(() => {
-        setIsStatsModalOpen(true)
+        setIsStatsModalOpen(false)
       }, GAME_LOST_INFO_DELAY)
     }
   }, [isGameWon, isGameLost])
