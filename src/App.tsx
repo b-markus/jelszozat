@@ -1,15 +1,13 @@
 import {
   InformationCircleIcon,
-  ChartBarIcon,
   PlusCircleIcon,
   CogIcon,
 } from '@heroicons/react/outline'
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Alert } from './components/alerts/Alert'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
 import { InfoModal } from './components/modals/InfoModal'
-import { StatsModal } from './components/modals/StatsModal'
 import {
   isWordInWordList,
   isWinningWord,
@@ -21,7 +19,6 @@ import { SettingsModal } from './components/modals/SettingsModal'
 import {
   GAME_TITLE,
   WIN_MESSAGES,
-  GAME_COPIED_MESSAGE,
   NOT_ENOUGH_LETTERS_MESSAGE,
   WORD_NOT_FOUND_MESSAGE,
   CORRECT_WORD_MESSAGE,
@@ -36,7 +33,6 @@ import {
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
   loadGameStateFromLocalStorage,
-  saveGameStateToLocalStorage,
   setStoredIsHighContrastMode,
   getStoredIsHighContrastMode,
 } from './lib/localStorage'
@@ -56,14 +52,11 @@ function App() {
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isNotEnoughLetters, setIsNotEnoughLetters] = useState(false)
-  const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const [isHardModeAlertOpen, setIsHardModeAlertOpen] = useState(false)
   const [isCreatePuzzleModalOpen, setIsCreatePuzzleModalOpen] = useState(false)
   const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
-  const [shareComplete, setShareComplete] = useState(false)
-  const [shareFailed, setShareFailed] = useState(false)
   const [isGameLost, setIsGameLost] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem('theme')
@@ -191,14 +184,11 @@ function App() {
         )
         setTimeout(() => {
           setSuccessAlert('')
-          setIsStatsModalOpen(true)
         }, ALERT_TIME_MS)
       }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
     }
     if (isGameLost) {
-      setTimeout(() => {
-        setIsStatsModalOpen(false)
-      }, GAME_LOST_INFO_DELAY)
+      setTimeout(() => {}, GAME_LOST_INFO_DELAY)
     }
   }, [isGameWon, isGameLost])
 
@@ -338,20 +328,6 @@ function App() {
     }
   }
 
-  const handleShareCopySuccess = useCallback(() => {
-    setShareComplete(true)
-    setTimeout(() => {
-      setShareComplete(false)
-    }, ALERT_TIME_MS)
-  }, [])
-
-  const handleShareFailure = useCallback(() => {
-    setShareFailed(true)
-    setTimeout(() => {
-      setShareFailed(false)
-    }, ALERT_TIME_MS)
-  }, [])
-
   return (
     <>
       <Alert message={NOT_ENOUGH_LETTERS_MESSAGE} isOpen={isNotEnoughLetters} />
@@ -369,16 +345,6 @@ function App() {
         isOpen={successAlert !== ''}
         variant="success"
         topMost={true}
-      />
-      <Alert
-        message={GAME_COPIED_MESSAGE}
-        isOpen={shareComplete}
-        variant="success"
-      />
-      <Alert
-        message="Nem sikerült a megosztás - lehet, hogy beágyazott böngészőt használsz?"
-        isOpen={shareFailed}
-        variant="warning"
       />
       <InfoModal
         isOpen={isInfoModalOpen}
