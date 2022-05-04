@@ -6,7 +6,7 @@ import { getStoredIsHighContrastMode } from './localStorage'
 
 export const getPuzzleName = () => {
   return solutionCreator !== undefined
-    ? 'Jelige: ' + solutionCreator
+    ? 'Ehhez: ' + solutionCreator
     : solutionIndex + '. nap'
 }
 

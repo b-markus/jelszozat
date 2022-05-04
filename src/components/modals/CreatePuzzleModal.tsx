@@ -38,16 +38,16 @@ export const CreatePuzzleModal = ({ isOpen, handleClose }: Props) => {
 
   return (
     <BaseModal
-      title="Saját feladvány"
+      title="Saját jelszó"
       isOpen={isOpen}
       handleClose={handleClose}
     >
       <p className="text-gray-500 dark:text-slate-200 pb-2">
-        Most már saját feladványt is készíthetsz a barátaidnak!
+        Saját jelszó emlékeztetőt is készíthetsz.
       </p>
 
       <p className="text-gray-500 dark:text-slate-200 pb-2 pt-5">
-        Válassz egy ötbetűs szót:
+        Válassz egy ötbetűs jelszót:
       </p>
       <div className="pb-2">
         <input
@@ -59,7 +59,7 @@ export const CreatePuzzleModal = ({ isOpen, handleClose }: Props) => {
       </div>
       {wordLetters?.length !== 5 && (
         <p className="text-sm text-red-500 dark:text-red-500 pb-2">
-          A szónak ötbetűsnek kell lennie.
+          A jelszónak ötbetűsnek kell lennie.
         </p>
       )}
       {wordLetters !== undefined && word.length >= 5 && (
@@ -71,8 +71,8 @@ export const CreatePuzzleModal = ({ isOpen, handleClose }: Props) => {
       )}
 
       <p className="text-gray-500 dark:text-slate-200 pb-2 pt-5">
-        Válassz egy jeligét (hogy beazonosíthassák a játékosok - de vigyázz, ne
-        utalj a megoldásra!):
+        Válassz egy jeligét (hogy beazonosíthasd az applikációt - de vigyázz, ne
+        utalj a jelszóra!):
       </p>
       <div className="pb-2">
         <input
@@ -91,7 +91,7 @@ export const CreatePuzzleModal = ({ isOpen, handleClose }: Props) => {
       {gameLink && (
         <>
           <p className="text-gray-500 dark:text-slate-200 pb-2 pt-5">
-            Íme a link a játékhoz:
+            Íme a link a rejtvényhez:
           </p>
           <p className="text-lg text-blue-500 dark:text-blue-500 pb-2 break-all">
             <a href={gameLink} target="_blank" rel="noreferrer">

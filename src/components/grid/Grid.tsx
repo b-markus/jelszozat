@@ -26,7 +26,7 @@ export const Grid = ({
 
   return (
     <div
-      className="grid grid-rows-8 gap-1 mx-auto p-2"
+      className={`grid grid-rows-${MAX_CHALLENGES} gap-1 mx-auto p-2`}
       style={{ width: `${size.width}px`, height: `${size.height}px` }}
     >
       {guesses.map((guess, i) => (
