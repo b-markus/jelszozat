@@ -2,7 +2,7 @@ import { Word } from '../lib/statuses'
 
 export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
 
-export const WIN_MESSAGES = ['Ez igen!', 'Szép munka!', 'Megcsináltad!']
+export const WIN_MESSAGES = ['Remek, kitaláltad a jelszót!']
 export const GAME_COPIED_MESSAGE = 'A játékot kimásoltuk a vágólapra'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'Nincs elég betű'
 export const WORD_NOT_FOUND_MESSAGE = 'Nem találtunk ilyen szót'

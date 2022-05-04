@@ -384,17 +384,6 @@ function App() {
         isOpen={isInfoModalOpen}
         handleClose={() => setIsInfoModalOpen(false)}
       />
-      <StatsModal
-        isOpen={isStatsModalOpen}
-        handleClose={() => setIsStatsModalOpen(false)}
-        guesses={guesses}
-        gameStats={stats}
-        isGameLost={isGameLost}
-        isGameWon={isGameWon}
-        handleShareCopySuccess={handleShareCopySuccess}
-        handleShareFailure={handleShareFailure}
-        isHardMode={isHardMode}
-      />
       <SettingsModal
         isOpen={isSettingsModalOpen}
         handleClose={() => setIsSettingsModalOpen(false)}
@@ -419,10 +408,6 @@ function App() {
             <InformationCircleIcon
               className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
               onClick={() => setIsInfoModalOpen(true)}
-            />
-            <ChartBarIcon
-              className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-              onClick={() => setIsStatsModalOpen(true)}
             />
             <PlusCircleIcon
               className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
