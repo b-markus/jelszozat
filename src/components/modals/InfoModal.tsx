@@ -28,14 +28,14 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <div className="grid grid-cols-5 gap-1 mb-1 mt-4">
-        <Cell value="P" />
-        <Cell value="E" />
-        <Cell value="N" />
-        <Cell value="G" status="present" />
-        <Cell value="Ő" />
+        <Cell value="CS" status="present"/>
+        <Cell value="A" />
+        <Cell value="L" />
+        <Cell value="Á" />
+        <Cell value="S" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        A G betű szerepel a szóban, de nem jó helyen van.
+        A CS betű szerepel a szóban, de nem jó helyen van.
       </p>
 
       <div className="grid grid-cols-5 gap-1 mb-1 mt-4">
@@ -45,20 +45,23 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="U" status="absent" />
         <Cell value="G" />
       </div>
-      <p className="text-sm text-gray-500 dark:text-gray-300 mb-8">
+      <p className="text-sm text-gray-500 dark:text-gray-300 mb-4">
         Az U betű nem szerepel a szóban.
+      </p>
+      <p className="text-sm text-gray-500 dark:text-gray-300 mb-8">
+        Ha kifogytál a tippekből, csak töltsd újra az oldalt.
       </p>
 
       <p className="italic text-sm text-gray-500 dark:text-gray-300 pb-2">
         Ez egy nyílt forráskódú szójáték, <b>mármint jelszó menedzser</b>, a Wordle magyar változatát véve alapul.
       </p>
       <p className="italic text-sm text-gray-500 dark:text-gray-300 pb-2">
-        Az angol verzió klónjának{' '}
+        Az angol verzió klónjának kódját{' '}
         <a
           href="https://github.com/cwackerfuss/react-wordle"
           className="underline font-bold"
         >
-          a kódját itt találod.
+          itt találod.
         </a>
       </p>
       <p className="italic text-sm text-gray-500 dark:text-gray-300 pb-2">
